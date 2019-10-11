@@ -3,21 +3,21 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata: 
   name: wd
-  namespace: default
+  namespace: keel
   labels: 
-      name: "wd"     
+      name: "keel"     
 spec:
   replicas: 1
   template:
     metadata:
-      name: wd
+      name: keel
       labels:
-        app: wd        
+        app: keel        
     spec:
       containers:                    
         - image: karolisr/webhook-demo:0.0.15
           imagePullPolicy: Always            
-          name: wd
+          name: keel
           command: ["/bin/webhook-demo"]
           ports:
             - containerPort: 8090       
